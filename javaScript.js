@@ -2,6 +2,11 @@ function bmi() {
     var bb = document.getElementById("bb").value;
     var tb = document.getElementById('tb').value;
     var hasil = bb/tb ** 2;
+    var a = "UNDERWEIGHT";
+    var b = "NORMAL";
+    var c = "OVERWEIGHT"
+    var d = "OBESE";
+    var e = "EXTREMELY OBESE";
     document.getElementById("result").innerHTML = format_number(hasil);
 
     function format_number(n) {
@@ -9,36 +14,25 @@ function bmi() {
       }
 
     if (hasil<18.5) {
-        var paragraph = document.getElementById("classification");
-        var text = document.createTextNode("UNDERWEIGHT");
-
-        paragraph.appendChild(text);
+        document.getElementById("classification").innerHTML = a;
     }
 
     else if (hasil<24.9) {
-        var paragraph = document.getElementById("classification");
-        var text = document.createTextNode("NORMAL");
+        document.getElementById("classification").innerHTML = b;
 
-        paragraph.appendChild(text);
     }
     else if (hasil<29.9) {
-        var paragraph = document.getElementById("classification");
-        var text = document.createTextNode("OVERWEIGHT");
+        document.getElementById("classification").innerHTML = c;
 
-        paragraph.appendChild(text);
     }
 
     else if (hasil<34.9) {
-        var paragraph = document.getElementById("classification");
-        var text = document.createTextNode("OBESE");
+        document.getElementById("classification").innerHTML = d;
 
-        paragraph.appendChild(text);
     }
 
     else {
-        var paragraph = document.getElementById("classification");
-        var text = document.createTextNode("EXTREMELY OBESE");
+        document.getElementById("classification").innerHTML = e;
 
-        paragraph.appendChild(text);
     }
 }
