@@ -1,8 +1,7 @@
 function bmi() {
     var bb = document.getElementById("bb").value;
     var tb = document.getElementById('tb').value;
-    var tbb = tb*tb;
-    var hasil = bb/tbb;
+    var hasil = bb/tb ** 2;
     document.getElementById("result").innerHTML = hasil ;
 
     if (hasil<18.5) {
