@@ -2,7 +2,11 @@ function bmi() {
     var bb = document.getElementById("bb").value;
     var tb = document.getElementById('tb').value;
     var hasil = bb/tb ** 2;
-    document.getElementById("result").innerHTML = hasil ;
+    document.getElementById("result").innerHTML = format_number(hasil);
+
+    function format_number(n) {
+        return n.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
+      }
 
     if (hasil<18.5) {
         var paragraph = document.getElementById("classification");
